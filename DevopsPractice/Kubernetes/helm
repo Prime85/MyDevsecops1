@@ -1,0 +1,42 @@
+
+# To install helm
+Go to the browser and search for "install helm". Sellect the 1st on the browser, this should take you to helm.sh
+
+
+# Helm commands
+https://helm.sh/docs/helm/helm/
+
+bitnami.com/stacks/helm
+github.com/bitnami/charts/
+
+
+
+
+                                DevSecOps
+
+#################### HELM Install #################### 
+
+export VERIFY_CHECKSUM=false 
+curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+helm version
+
+#################### HELM Install #################### 
+
+
+
+#################### Falco #################### 
+
+kubectl create namespace falco
+
+helm repo add falcosecurity https://falcosecurity.github.io/charts
+helm install falco falcosecurity/falco \
+--set falcosidekick.enabled=true \
+--set falcosidekick.webui.enabled=true \
+-n falco 
+
+#################### Falco #################### 
+
+
+Access UI - http://ext-ip:falco-svc-node-port/ui
+
+
